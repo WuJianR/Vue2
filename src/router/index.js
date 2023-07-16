@@ -1,27 +1,42 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
-Vue.use(VueRouter)
+import Vue from "vue";
+import VueRouter from "vue-router";
+import TestTableComponent from "../views/TestTableComponent.vue";
+import TestInputComponent from "../views/TestInputComponent.vue";
+import Bubbling from "../views/Bubbling.vue";
+import ForceUpdate from "@/views/ForceUpdate";
+import OnInput from "@/views/OnInput.vue";
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/home",
+    name: "home",
+    component: TestTableComponent,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: "/newInput",
+    name: "newinput",
+    component: TestInputComponent,
+  },
+  {
+    path: "/bubbling",
+    name: "bubbling",
+    component: Bubbling,
+  },
+  {
+    path: "/forceupdate",
+    name: "forceupdate",
+    component: ForceUpdate,
+    },
+    {
+        path: "/oninput",
+        name: "oninput",
+        component: OnInput
   }
-]
+];
 
 const router = new VueRouter({
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

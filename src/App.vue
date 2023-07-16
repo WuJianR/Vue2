@@ -1,32 +1,36 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <div class="navList">
+      <router-link to="/home" class="nav">表格封装 </router-link>
+      <router-link to="/newInput" class="nav">
+        <div title="封装组件的技巧">组件封装技巧</div>
+      </router-link>
+      <router-link to="/bubbling" class="nav">
+        <div title="css实现冒泡效果">css实现冒泡效果</div>
+      </router-link>
+      <router-link to="/forceupdate" class="nav">
+        <div title="强制更新数据的两种方法">
+            Vue2数组、对象失去响应式的两种解决方法
+        </div>
+      </router-link>
+      <router-link to="/oninput" class="nav">
+        <div>oninput和@input的差异</div>
+      </router-link>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.navList {
+  display: flex;
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.nav {
+  padding: 10px 30px;
+  border: 2px solid #aaa;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
 }
 </style>
